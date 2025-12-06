@@ -12,11 +12,11 @@
 - [《申威LLDB调试器软件》](./software/swlldb.html)
 - [《申威Systemtap跟踪和探测工具软件》](./software/systemtap.html)
 
-## 报告
+## 查错报告
 - [boost攻关查错总结报告](./report/ali_boost_coredump.html)
 - [天翼云vpp查错报告](./report/tele_vpp_coredump.html)
-- 
-## PPT
+
+## PPT讲义
 
 - [申威软件调试调优技术](./ppt/Debugging_and_Tuning.html)
 - [从基础到高级调试——申威GDB&LLDB调试指南](./ppt/Debugging_with_GDB_LLDB.html)
