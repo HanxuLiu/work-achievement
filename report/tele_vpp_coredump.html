@@ -1,28 +1,135 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>天翼云vpp查错报告</title>
-    <!--
-This example created for PDFObject.com by Philip Hutchison (www.pipwerks.com)
-Copyright 2016-2025, MIT-style license http://pipwerks.mit-license.org/
-Documentation: http://pdfobject.com 
-Source code: https://github.com/pipwerks/PDFObject
--->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boost攻关查错总结</title>
+    <style>
+      /* 极简重置 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- site analytics for pdfobject.com, do not copy into your code -->
-    <script
-      defer
-      data-domain="pdfobject.com"
-      src="https://analytics.pwk.io/js/script.js"
-    ></script>
+      /* 页面基础样式 */
+      body {
+        background-color: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column; /* 改为垂直排列 */
+        align-items: center; /* 水平居中 */
+        padding: 20px;
+      }
+
+      /* 每个图片容器 */
+      .image-container {
+        width: 100%;
+        max-width: 900px; /* 限制最大宽度 */
+        height: 90vh; /* 每个图片容器高度为视口的90% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px; /* 图片之间的间距 */
+      }
+
+      /* 最后一个图片容器不需要底部间距 */
+      .image-container:last-child {
+        margin-bottom: 0;
+      }
+
+      /* 图片样式 */
+      .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+    </style>
   </head>
 
   <body>
-    <script src="https://unpkg.com/pdfobject@2.3.1/pdfobject.min.js"></script>
-    <script>
-      PDFObject.embed("tele_vpp_coredump.pdf");
-    </script>
+
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/6936614e6f499.jpg" alt="天翼云vpp1查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/6936614bdfc91.jpg" alt="天翼云vpp2查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/6936614f47bdc.jpg" alt="天翼云vpp3查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/6936614c9d1b5.jpg" alt="天翼云vpp4查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/6936614bdfac2.jpg" alt="天翼云vpp5查错" />
+    </div>
+
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/693661a366fb2.jpg" alt="天翼云vpp6查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/693661a350fa6.jpg" alt="天翼云vpp7查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/693661a3829d0.jpg" alt="天翼云vpp8查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/693661a3e1382.jpg" alt="天翼云vpp9查错" />
+    </div>
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/08/693661a54630a.jpg" alt="天翼云vpp10查错" />
+    </div>
+
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错11" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错12" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错13" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错14" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错15" />
+    </div>
+
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错16" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错17" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错18" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错19" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错20" />
+    </div>
+
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错21" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错22" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错23" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错24" />
+    </div>
+    <div class="image-container">
+      <img src="" alt="天翼云vpp查错25" />
+    </div>    
+    
   </body>
 </html>
