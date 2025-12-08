@@ -1,28 +1,108 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PPT-申威软件调试调优技术</title>
-    <!--
-This example created for PDFObject.com by Philip Hutchison (www.pipwerks.com)
-Copyright 2016-2025, MIT-style license http://pipwerks.mit-license.org/
-Documentation: http://pdfobject.com 
-Source code: https://github.com/pipwerks/PDFObject
--->
+    <style>
+      /* 极简重置 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- site analytics for pdfobject.com, do not copy into your code -->
-    <script
-      defer
-      data-domain="pdfobject.com"
-      src="https://analytics.pwk.io/js/script.js"
-    ></script>
+      /* 页面基础样式 */
+      body {
+        background-color: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* 减小内边距 */
+      }
+
+      /* 每个图片容器 */
+      .image-container {
+        width: 100%;
+        max-width: 900px; /* 限制最大宽度 */
+        /* 移除固定高度，改为自适应 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; /* 减小间距 */
+      }
+
+      /* 最后一个图片容器不需要底部间距 */
+      .image-container:last-child {
+        margin-bottom: 0;
+      }
+
+      /* 图片样式 */
+      .image-container img {
+        width: 100%; /* 让图片宽度充满容器 */
+        height: auto; /* 高度自适应 */
+        max-height: 95vh; /* 限制最大高度，防止过大 */
+        object-fit: contain;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        display: block; /* 移除图片底部间隙 */
+      }
+    </style>
   </head>
 
   <body>
-    <script src="https://unpkg.com/pdfobject@2.3.1/pdfobject.min.js"></script>
-    <script>
-      PDFObject.embed("Debugging_and_Tuning.pdf");
-    </script>
+
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937126bd2a85.jpg" alt="PPT-申威软件调试调优技术001" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937127982b99.jpg" alt="PPT-申威软件调试调优技术002" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712808ba45.jpg" alt="PPT-申威软件调试调优技术003" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712848fb65.jpg" alt="PPT-申威软件调试调优技术004" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937128865f67.jpg" alt="PPT-申威软件调试调优技术005" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937128865f67.jpg" alt="PPT-申威软件调试调优技术006" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371291b300d.jpg" alt="PPT-申威软件调试调优技术007" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371295e5fdc.jpg" alt="PPT-申威软件调试调优技术008" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712993b9ce.jpg" alt="PPT-申威软件调试调优技术009" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937129c9ee91.jpg" alt="PPT-申威软件调试调优技术010" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712a741c21.jpg" alt="PPT-申威软件调试调优技术011" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712b301985.jpg" alt="PPT-申威软件调试调优技术012" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712bae0026.jpg" alt="PPT-申威软件调试调优技术013" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712be83107.jpg" alt="PPT-申威软件调试调优技术014" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712c17fdc4.jpg" alt="PPT-申威软件调试调优技术015" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712c546566.jpg" alt="PPT-申威软件调试调优技术016" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712cf5078e.jpg" alt="PPT-申威软件调试调优技术017" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712d2d118d.jpg" alt="PPT-申威软件调试调优技术018" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712d63cdda.jpg" alt="PPT-申威软件调试调优技术019" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712d9d71a8.jpg" alt="PPT-申威软件调试调优技术020" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693712fb4cf5e.jpg" alt="PPT-申威软件调试调优技术021" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937130037801.jpg" alt="PPT-申威软件调试调优技术022" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693713041c36a.jpg" alt="PPT-申威软件调试调优技术023" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937130738d73.jpg" alt="PPT-申威软件调试调优技术024" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937130b2161d.jpg" alt="PPT-申威软件调试调优技术025" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371332e2082.jpg" alt="PPT-申威软件调试调优技术026" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937133626b68.jpg" alt="PPT-申威软件调试调优技术027" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693713392c32d.jpg" alt="PPT-申威软件调试调优技术028" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937133bc7356.jpg" alt="PPT-申威软件调试调优技术029" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937133e5f9e8.jpg" alt="PPT-申威软件调试调优技术030" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937134257cec.jpg" alt="PPT-申威软件调试调优技术031" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693713467c252.jpg" alt="PPT-申威软件调试调优技术032" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937134941e45.jpg" alt="PPT-申威软件调试调优技术033" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937134c6a1c3.jpg" alt="PPT-申威软件调试调优技术034" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937134f17344.jpg" alt="PPT-申威软件调试调优技术035" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371352c4f26.jpg" alt="PPT-申威软件调试调优技术036" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371355bb2b7.jpg" alt="PPT-申威软件调试调优技术037" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937135831c3a.jpg" alt="PPT-申威软件调试调优技术038" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937135b43be7.jpg" alt="PPT-申威软件调试调优技术039" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937135db5870.jpg" alt="PPT-申威软件调试调优技术040" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937136543df6.jpg" alt="PPT-申威软件调试调优技术041" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371368ad9f2.jpg" alt="PPT-申威软件调试调优技术042" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937136b9132d.jpg" alt="PPT-申威软件调试调优技术043" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937136dead28.jpg" alt="PPT-申威软件调试调优技术044" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937137167567.jpg" alt="PPT-申威软件调试调优技术045" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371374ca2a2.jpg" alt="PPT-申威软件调试调优技术046" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693713779eb09.jpg" alt="PPT-申威软件调试调优技术047" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937137a6bfbf.jpg" alt="PPT-申威软件调试调优技术048" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937137d078a4.jpg" alt="PPT-申威软件调试调优技术049" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693713804f19b.jpg" alt="PPT-申威软件调试调优技术050" /> </div> 
+    
   </body>
 </html>

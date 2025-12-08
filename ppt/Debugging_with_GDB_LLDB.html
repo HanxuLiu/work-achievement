@@ -1,28 +1,118 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PPT-从基础到高级调试</title>
-    <!--
-This example created for PDFObject.com by Philip Hutchison (www.pipwerks.com)
-Copyright 2016-2025, MIT-style license http://pipwerks.mit-license.org/
-Documentation: http://pdfobject.com 
-Source code: https://github.com/pipwerks/PDFObject
--->
+    <style>
+      /* 极简重置 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- site analytics for pdfobject.com, do not copy into your code -->
-    <script
-      defer
-      data-domain="pdfobject.com"
-      src="https://analytics.pwk.io/js/script.js"
-    ></script>
+      /* 页面基础样式 */
+      body {
+        background-color: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* 减小内边距 */
+      }
+
+      /* 每个图片容器 */
+      .image-container {
+        width: 100%;
+        max-width: 900px; /* 限制最大宽度 */
+        /* 移除固定高度，改为自适应 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; /* 减小间距 */
+      }
+
+      /* 最后一个图片容器不需要底部间距 */
+      .image-container:last-child {
+        margin-bottom: 0;
+      }
+
+      /* 图片样式 */
+      .image-container img {
+        width: 100%; /* 让图片宽度充满容器 */
+        height: auto; /* 高度自适应 */
+        max-height: 95vh; /* 限制最大高度，防止过大 */
+        object-fit: contain;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        display: block; /* 移除图片底部间隙 */
+      }
+    </style>
   </head>
 
   <body>
-    <script src="https://unpkg.com/pdfobject@2.3.1/pdfobject.min.js"></script>
-    <script>
-      PDFObject.embed("Debugging_with_GDB_LLDB.pdf");
-    </script>
+
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937155339cfb.jpg" alt="PPT-从基础到高级调试001" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937155baa93f.jpg" alt="PPT-从基础到高级调试002" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937155e7f1b6.jpg" alt="PPT-从基础到高级调试003" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937156145cb8.jpg" alt="PPT-从基础到高级调试004" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937156533f9b.jpg" alt="PPT-从基础到高级调试005" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693715689b08e.jpg" alt="PPT-从基础到高级调试006" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937156d75a4b.jpg" alt="PPT-从基础到高级调试007" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693715700ee30.jpg" alt="PPT-从基础到高级调试008" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937157271149.jpg" alt="PPT-从基础到高级调试009" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371574bdd17.jpg" alt="PPT-从基础到高级调试010" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371578819ee.jpg" alt="PPT-从基础到高级调试011" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937157b06eb4.jpg" alt="PPT-从基础到高级调试012" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371581801f7.jpg" alt="PPT-从基础到高级调试013" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371584eab9c.jpg" alt="PPT-从基础到高级调试014" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937167a48899.jpg" alt="PPT-从基础到高级调试015" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937167e2a6bc.jpg" alt="PPT-从基础到高级调试016" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371680aa179.jpg" alt="PPT-从基础到高级调试017" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371682cb0b8.jpg" alt="PPT-从基础到高级调试018" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937168691d88.jpg" alt="PPT-从基础到高级调试019" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937168ad0bc4.jpg" alt="PPT-从基础到高级调试020" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937168e5c88b.jpg" alt="PPT-从基础到高级调试021" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371690b678a.jpg" alt="PPT-从基础到高级调试022" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937169378ff3.jpg" alt="PPT-从基础到高级调试023" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716961b279.jpg" alt="PPT-从基础到高级调试024" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937169965b87.jpg" alt="PPT-从基础到高级调试025" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937169c390ad.jpg" alt="PPT-从基础到高级调试026" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716a2ce71d.jpg" alt="PPT-从基础到高级调试027" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716a73fed6.jpg" alt="PPT-从基础到高级调试028" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716aa036db.jpg" alt="PPT-从基础到高级调试029" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716ac869b7.jpg" alt="PPT-从基础到高级调试030" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716b6b634f.jpg" alt="PPT-从基础到高级调试031" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716b99dd2b.jpg" alt="PPT-从基础到高级调试032" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716bc6efe4.jpg" alt="PPT-从基础到高级调试033" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716bf32163.jpg" alt="PPT-从基础到高级调试034" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716c159381.jpg" alt="PPT-从基础到高级调试035" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716f9f17b0.jpg" alt="PPT-从基础到高级调试036" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693716fd69c42.jpg" alt="PPT-从基础到高级调试037" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371700c141c.jpg" alt="PPT-从基础到高级调试038" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371703ee797.jpg" alt="PPT-从基础到高级调试039" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717092a034.jpg" alt="PPT-从基础到高级调试040" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937173236b01.jpg" alt="PPT-从基础到高级调试041" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937173b17a62.jpg" alt="PPT-从基础到高级调试042" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937173e25273.jpg" alt="PPT-从基础到高级调试043" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937174024d0b.jpg" alt="PPT-从基础到高级调试044" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937174d58bb4.jpg" alt="PPT-从基础到高级调试045" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371750ce8d3.jpg" alt="PPT-从基础到高级调试046" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371753cdbc5.jpg" alt="PPT-从基础到高级调试047" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717563621c.jpg" alt="PPT-从基础到高级调试048" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717599850c.jpg" alt="PPT-从基础到高级调试049" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937175d6b9cc.jpg" alt="PPT-从基础到高级调试050" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937176060855.jpg" alt="PPT-从基础到高级调试051" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717698f03a.jpg" alt="PPT-从基础到高级调试052" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937176cf289a.jpg" alt="PPT-从基础到高级调试053" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937176f1a821.jpg" alt="PPT-从基础到高级调试054" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717727d0cd.jpg" alt="PPT-从基础到高级调试055" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937177775dd5.jpg" alt="PPT-从基础到高级调试056" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937177ab2426.jpg" alt="PPT-从基础到高级调试057" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/6937177d0a73a.jpg" alt="PPT-从基础到高级调试058" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717801f6b1.jpg" alt="PPT-从基础到高级调试059" /> </div> 
+    <div class="image-container"> <img src="https://paopao-img.cpolar.cn/i/2025/12/09/693717825d4ad.jpg" alt="PPT-从基础到高级调试060" /> </div> 
+    
   </body>
 </html>
