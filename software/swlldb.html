@@ -1,28 +1,61 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>软著《申威LLDB调试器软件》</title>
-    <!--
-This example created for PDFObject.com by Philip Hutchison (www.pipwerks.com)
-Copyright 2016-2025, MIT-style license http://pipwerks.mit-license.org/
-Documentation: http://pdfobject.com 
-Source code: https://github.com/pipwerks/PDFObject
--->
+    <style>
+      /* 极简重置 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- site analytics for pdfobject.com, do not copy into your code -->
-    <script
-      defer
-      data-domain="pdfobject.com"
-      src="https://analytics.pwk.io/js/script.js"
-    ></script>
+      /* 页面基础样式 */
+      body {
+        background-color: #f5f5f5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; /* 减小内边距 */
+      }
+
+      /* 每个图片容器 */
+      .image-container {
+        width: 100%;
+        max-width: 900px; /* 限制最大宽度 */
+        /* 移除固定高度，改为自适应 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; /* 减小间距 */
+      }
+
+      /* 最后一个图片容器不需要底部间距 */
+      .image-container:last-child {
+        margin-bottom: 0;
+      }
+
+      /* 图片样式 */
+      .image-container img {
+        width: 100%; /* 让图片宽度充满容器 */
+        height: auto; /* 高度自适应 */
+        max-height: 95vh; /* 限制最大高度，防止过大 */
+        object-fit: contain;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        display: block; /* 移除图片底部间隙 */
+      }
+    </style>
   </head>
 
   <body>
-    <script src="https://unpkg.com/pdfobject@2.3.1/pdfobject.min.js"></script>
-    <script>
-      PDFObject.embed("swlldb.pdf");
-    </script>
+
+    <div class="image-container">
+      <img src="https://paopao-img.cpolar.cn/i/2025/12/09/69371aaf56fdb.png" alt="软著证书" />
+    </div>
+
   </body>
 </html>
